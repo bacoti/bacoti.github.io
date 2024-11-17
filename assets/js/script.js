@@ -7,3 +7,13 @@ $(window).on("scroll", function () {
     $("body").removeClass("fixed-header");
   }
 });
+
+// Document
+$(document).ready(function () {
+  // Typing Animation
+  new Typed("#type-it", {
+    strings: ["TI", "Informatika"],
+    typeSpeed: 120,
+    loop: true,
+  });
+});
