@@ -17,3 +17,23 @@ $(document).ready(function () {
     loop: true,
   });
 });
+
+document.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+  let currentSection = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 50; // Adjust offset for fixed header
+    if (scrollY >= sectionTop) {
+      currentSection = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").substring(1) === currentSection) {
+      link.classList.add("active");
+    }
+  });
+});
